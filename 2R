@@ -1,0 +1,63 @@
+Header.js (in Src)
+import React from 'react';
+// Header component receives props from the parent component (App)
+function Header(props) {
+return (
+<header>
+<h1>{props.title}</h1> {/* Display the title passed via props */}
+</header>
+);
+}
+export default Header;
+
+Footer.js (in Src)
+import React from 'react';
+// Footer component receives props from the parent component (App)
+function Footer(props) {
+return (
+<footer>
+<p>{props.tagline}</p> {/* Display the tagline passed via props */}
+<small>{props.copyright}</small> {/* Display copyright information */}
+</footer>
+);
+}
+export default Footer;
+
+App.js
+import React from 'react';
+import './App.css';
+// Import the Header and Footer components
+import Header from './Header';
+import Footer from './Footer';
+function App() {
+// Data to be passed to child components
+const title = "Welcome to React World";
+const tagline = "Code. Create. Innovate.";
+const copyright = "© 2025 Creative Coders Ltd.";
+return (
+<div className="App">
+{/* Pass data to Header and Footer components using props */}
+<Header title={title} />
+<Footer tagline={tagline} copyright={copyright} />
+</div>
+);
+}
+export default App;
+
+App.css
+.App {
+text-align: center;
+font-family: Arial, sans-serif;
+}
+header {
+background-color:slategray;
+color: white;
+padding: 20px;
+}
+footer {
+background-color:slategray;
+color: white;
+padding: 10px;
+position: fixed;
+width: 100%;
+bottom: 0;}
