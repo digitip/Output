@@ -1,0 +1,87 @@
+npm install react-router-dom
+Then execute the following components
+App.js
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-
+router-dom';
+import Navbar from './components/Navbar';
+import Home from './components/Home';
+import About from './components/About';
+import Contact from './components/Contact';
+const App = () => {
+return (
+<Router>
+<div>
+<Navbar />
+<div className="content">
+<Routes>
+<Route path="/" element={<Home />} />
+<Route path="/about" element={<About />} />
+<Route path="/contact" element={<Contact />} />
+</Routes>
+</div>
+</div>
+</Router>
+);
+};
+export default App;
+About.js
+import React from 'react';
+const About = () => {
+return (
+<div>
+<h1>About Us</h1>
+<p>This is the About page, where we tell you about our app.</p>
+</div>
+);
+};
+export default About;
+Contact.js
+import React from 'react';
+const Contact = () => {
+return (
+<div>
+<h1>Contact Us</h1>
+<p>This is the Contact page. Feel free to reach out to us!</p>
+</div>
+);
+};
+export default Contact;
+Home.js
+import React from 'react';
+const Home = () => {
+return (
+<div>
+<h1>Welcome to the Home Page!</h1>
+<p>This is the home page of our simple React application.</p>
+</div>
+);
+};
+export default Home;
+Navbar.js
+import React from 'react';
+import { NavLink } from 'react-router-dom';
+const Navbar = () => {
+return (
+<nav>
+<ul>
+<li>
+<NavLink to="/" exact activeClassName="active">
+Home
+</NavLink>
+</li>
+<li>
+<NavLink to="/about" activeClassName="active">
+About
+</NavLink>
+</li>
+<li>
+<NavLink to="/contact" activeClassName="active">
+Contact
+</NavLink>
+</li>
+</ul>
+</nav>
+);
+};
+export default Navbar;
